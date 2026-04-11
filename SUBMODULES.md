@@ -115,6 +115,34 @@ git submodule update --remote api
 git submodule update --remote --merge
 ```
 
+### Rebase All Repositories
+
+Use the platform rebase workflow when you want the root repository and every submodule aligned to the latest tracked upstream branch:
+
+```bash
+./scripts/nuforce-rebase.sh
+```
+
+This workflow:
+
+- Pulls the current platform branch with rebase
+- Reads tracked submodule branches from `.gitmodules`
+- Checks out the tracked branch if a submodule is in detached HEAD state
+- Pulls the tracked branch when already on it
+- Rebases feature branches onto the latest tracked upstream branch otherwise
+
+Tracked branches:
+
+- `api` -> `main`
+- `mobile-app` -> `main`
+- `web-app` -> `release`
+- `website` -> `main`
+
+Agent shortcuts:
+
+- **Cursor:** `/nuforce-rebase`
+- **Claude:** `/nuforce-rebase`
+
 ### Advanced Operations
 
 ```bash

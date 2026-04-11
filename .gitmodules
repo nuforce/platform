@@ -1,12 +1,16 @@
 [submodule "api"]
 	path = api
 	url = https://github.com/nuforce/nuforce-api.git
+	branch = main
 [submodule "mobile-app"]
 	path = mobile-app
 	url = https://github.com/nuforce/nuforce-flutter.git
+	branch = main
 [submodule "web-app"]
 	path = web-app
 	url = https://github.com/nuforce/nuforce-web-app.git
+	branch = release
 [submodule "website"]
 	path = website
 	url = https://github.com/nuforce/nuforce-nuxt.git
+	branch = main
