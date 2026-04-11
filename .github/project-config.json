@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "owner": "nuforce",
+  "repositories": [
+    { "name": "nuforce-platform", "label": "repo:platform", "description": "Platform-wide configuration and orchestration" },
+    { "name": "nuforce-api", "label": "repo:api", "description": "Laravel 10 + PHP 8.3 backend API" },
+    { "name": "nuforce-flutter", "label": "repo:mobile", "description": "Flutter 3.27.1 mobile application" },
+    { "name": "nuforce-web-app", "label": "repo:webapp", "description": "Next.js 14 + React web application" },
+    { "name": "nuforce-nuxt", "label": "repo:website", "description": "Nuxt 3 + Vue 3 marketing website" }
+  ],
+  "project": {
+    "number": 8,
+    "id": "PVT_kwDOA9q8vs4BQfru",
+    "title": "nuforce",
+    "url": "https://github.com/orgs/nuforce/projects/8"
+  },
+  "fields": {
+    "Status": {
+      "id": "PVTSSF_lADOA9q8vs4BQfruzg-mN04",
+      "type": "single_select",
+      "options": {
+        "Backlog": "3cf2289c",
+        "Ready": "c941efbe",
+        "In Progress": "7a8689b6",
+        "In Review": "78a83e7e",
+        "Done": "7ea7ff86"
+      }
+    },
+    "Priority": {
+      "id": "PVTSSF_lADOA9q8vs4BQfruzg-mOq4",
+      "type": "single_select",
+      "options": {
+        "P0": "16595e3e",
+        "P1": "e6510dc8",
+        "P2": "b292f156"
+      }
+    },
+    "Size": {
+      "id": "PVTSSF_lADOA9q8vs4BQfruzg-mOrA",
+      "type": "single_select",
+      "options": {
+        "XS": "a0869a30",
+        "S": "4579bb14",
+        "M": "81005245",
+        "L": "4be14f95",
+        "XL": "080a7abb"
+      }
+    },
+    "Estimate": {
+      "id": "PVTF_lADOA9q8vs4BQfruzg-mQDU",
+      "type": "number",
+      "description": "Story points estimate"
+    },
+    "Assignees": {
+      "id": "PVTF_lADOA9q8vs4BQfruzg-mN00",
+      "type": "assignees"
+    },
+    "Labels": {
+      "id": "PVTF_lADOA9q8vs4BQfruzg-mN08",
+      "type": "labels"
+    }
+  },
+  "labels": {
+    "bootstrapped": true,
+    "domains": [
+      "domain:api",
+      "domain:mobile", 
+      "domain:webapp",
+      "domain:website",
+      "domain:platform",
+      "domain:infra",
+      "domain:auth",
+      "domain:scheduling",
+      "domain:payments",
+      "domain:tracking",
+      "domain:workforce"
+    ],
+    "types": [
+      "type:epic",
+      "type:feature", 
+      "type:task",
+      "type:bug",
+      "type:chore",
+      "type:spike"
+    ],
+    "components": [
+      "component:api",
+      "component:service",
+      "component:model",
+      "component:ui",
+      "component:test",
+      "component:config"
+    ],
+    "priorities": [
+      "priority:p0-critical",
+      "priority:p1-high",
+      "priority:p2-medium", 
+      "priority:p3-low"
+    ],
+    "sizes": [
+      "size:xs",
+      "size:s",
+      "size:m",
+      "size:l",
+      "size:xl"
+    ]
+  },
+  "team": [
+    "johnefemer",
+    "tanvirahmed2707"
+  ],
+  "conventions": {
+    "source": "auto-detected",
+    "techStack": {
+      "backend": "Laravel 10, PHP 8.3, MySQL 8.0, Redis 7.1",
+      "frontend": "Next.js 14, React 18, TypeScript, Tailwind CSS",
+      "mobile": "Flutter 3.27.1, Dart 3.3.4",
+      "website": "Nuxt 3, Vue 3, TypeScript, Bootstrap 5",
+      "infrastructure": "AWS ECS Fargate, Docker, Terraform"
+    },
+    "testCommands": {
+      "api": "./vendor/bin/phpunit",
+      "webapp": "npm test",
+      "mobile": "flutter test",
+      "website": "npm run test"
+    },
+    "lintCommands": {
+      "api": "./vendor/bin/phpcs",
+      "webapp": "npm run lint",
+      "mobile": "flutter analyze",
+      "website": "npm run lint"
+    },
+    "buildCommands": {
+      "api": "composer install && docker-compose up -d",
+      "webapp": "npm install && npm run build",
+      "mobile": "flutter pub get && flutter build",
+      "website": "npm install && npm run build"
+    }
+  },
+  "workflows": {
+    "defaultStatus": "Backlog",
+    "readyTransition": "Requirements clear, 'Needs Clarity' section empty",
+    "inProgressTransition": "Developer assigned, work started",
+    "inReviewTransition": "PR opened and linked",
+    "doneTransition": "PR merged, issue closed"
+  },
+  "estimationGuide": {
+    "XS": { "points": 1, "time": "< 2 hours", "examples": "Config change, small fix, typo" },
+    "S": { "points": 2, "time": "2-4 hours", "examples": "Single function, one-file change" },
+    "M": { "points": 3, "time": "4-8 hours", "examples": "Feature component, multi-file change" },
+    "L": { "points": 5, "time": "1-2 days", "examples": "Complex feature, new module" },
+    "XL": { "points": 8, "time": "2-5 days", "examples": "Major subsystem, cross-cutting change" }
+  }
+}
