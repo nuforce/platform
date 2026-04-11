@@ -1,0 +1,12 @@
+[submodule "api"]
+	path = api
+	url = https://github.com/nuforce/nuforce-api.git
+[submodule "mobile-app"]
+	path = mobile-app
+	url = https://github.com/nuforce/nuforce-flutter.git
+[submodule "web-app"]
+	path = web-app
+	url = https://github.com/nuforce/nuforce-web-app.git
+[submodule "website"]
+	path = website
+	url = https://github.com/nuforce/nuforce-nuxt.git
