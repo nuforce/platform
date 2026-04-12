@@ -2,7 +2,7 @@
   "version": 1,
   "owner": "nuforce",
   "repositories": [
-    { "name": "nuforce-platform", "label": "repo:platform", "description": "Platform-wide configuration and orchestration" },
+    { "name": "platform", "label": "repo:platform", "description": "Platform-wide configuration and orchestration" },
     { "name": "nuforce-api", "label": "repo:api", "description": "Laravel 10 + PHP 8.3 backend API" },
     { "name": "nuforce-flutter", "label": "repo:mobile", "description": "Flutter 3.27.1 mobile application" },
     { "name": "nuforce-web-app", "label": "repo:webapp", "description": "Next.js 14 + React web application" },

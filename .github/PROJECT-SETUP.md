@@ -3,7 +3,7 @@
 ## ✅ Connected to NuForce Project Board
 
 **Project:** [nuforce](https://github.com/orgs/nuforce/projects/8)  
-**Repository:** [nuforce-platform](https://github.com/nuforce/nuforce-platform)  
+**Repository:** [platform](https://github.com/nuforce/platform)  
 **Setup Date:** April 11, 2026
 
 ## 📊 Project Board Configuration
