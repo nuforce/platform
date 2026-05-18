@@ -14,3 +14,7 @@
 	path = website
 	url = https://github.com/nuforce/nuforce-nuxt.git
 	branch = main
+[submodule "admin-app"]
+	path = admin-app
+	url = https://github.com/nuforce/nuforce-admin.git
+	branch = main
