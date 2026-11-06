@@ -6,10 +6,12 @@ This NuForce360 platform repository uses git submodules to organize the codebase
 
 | Submodule | Repository | Branch | Purpose |
 |-----------|------------|--------|---------|
-| `api/` | [nuforce-api](https://github.com/nuforce/nuforce-api) | main | Laravel 10 + PHP 8.3 backend API |
-| `mobile-app/` | [nuforce-flutter](https://github.com/nuforce/nuforce-flutter) | main | Flutter 3.27.1 mobile application |
-| `web-app/` | [nuforce-web-app](https://github.com/nuforce/nuforce-web-app) | release | Next.js 14 + React web application |
-| `website/` | [nuforce-nuxt](https://github.com/nuforce/nuforce-nuxt) | main | Nuxt 3 + Vue 3 marketing website |
+| `nuforce-api/` | [nuforce-api](https://github.com/nuforce/nuforce-api) | main | Laravel 10 + PHP 8.3 backend API |
+| `nuforce-flutter/` | [nuforce-flutter](https://github.com/nuforce/nuforce-flutter) | main | Flutter 3.27.1 mobile application |
+| `nuforce-web-app/` | [nuforce-web-app](https://github.com/nuforce/nuforce-web-app) | release | Next.js 14 + React web application |
+| `nuforce-nuxt/` | [nuforce-nuxt](https://github.com/nuforce/nuforce-nuxt) | main | Nuxt 3 + Vue 3 marketing website |
+| `nuforce-admin/` | [nuforce-admin](https://github.com/nuforce/nuforce-admin) | main | Vite + React internal admin app |
+| `nuforce-ai-engine/` | [nuforce-ai-engine](https://github.com/nuforce/nuforce-ai-engine) | main | Node + TypeScript AI engine |
 
 ## 🚀 Getting Started
 
@@ -17,8 +19,8 @@ This NuForce360 platform repository uses git submodules to organize the codebase
 
 ```bash
 # Clone the platform repository with all submodules
-git clone --recursive https://github.com/nuforce/platform.git
-cd platform
+git clone --recursive https://github.com/nuforce/platform.git nuforce-workspace
+cd nuforce-workspace
 
 # Or if you already cloned without --recursive
 git submodule init
@@ -33,7 +35,7 @@ git pull
 git submodule update --recursive
 
 # Or update specific submodule
-git submodule update api
+git submodule update nuforce-api
 ```
 
 ## 🔄 Working with Submodules
@@ -42,7 +44,7 @@ git submodule update api
 
 ```bash
 # Navigate to submodule directory
-cd api
+cd nuforce-api
 
 # Work normally - create branch, make changes, commit
 git checkout -b feature/new-feature
@@ -59,12 +61,12 @@ cd ..
 
 ```bash
 # Update submodule to latest commit
-cd api
+cd nuforce-api
 git pull origin main
 cd ..
 
 # Commit the submodule update in platform
-git add api
+git add nuforce-api
 git commit -m "Update API submodule to latest"
 git push
 ```
@@ -76,9 +78,9 @@ git push
 git checkout -b platform/new-feature
 
 # Create corresponding branches in relevant submodules
-cd api
+cd nuforce-api
 git checkout -b feature/api-changes
-cd ../web-app
+cd ../nuforce-web-app
 git checkout -b feature/web-changes
 cd ..
 
@@ -109,7 +111,7 @@ git diff --submodule
 git submodule update --remote
 
 # Update specific submodule to latest
-git submodule update --remote api
+git submodule update --remote nuforce-api
 
 # Update and merge (instead of detached HEAD)
 git submodule update --remote --merge
@@ -133,10 +135,12 @@ This workflow:
 
 Tracked branches:
 
-- `api` -> `main`
-- `mobile-app` -> `main`
-- `web-app` -> `release`
-- `website` -> `main`
+- `nuforce-api` -> `main`
+- `nuforce-flutter` -> `main`
+- `nuforce-web-app` -> `release`
+- `nuforce-nuxt` -> `main`
+- `nuforce-admin` -> `main`
+- `nuforce-ai-engine` -> `main`
 
 Agent shortcuts:
 
@@ -151,11 +155,11 @@ git submodule foreach 'git status'
 git submodule foreach 'git pull origin main'
 
 # Reset submodule to committed version
-git submodule update --init api
+git submodule update --init nuforce-api
 
 # Remove submodule (if needed)
-git submodule deinit api
-git rm api
+git submodule deinit nuforce-api
+git rm nuforce-api
 ```
 
 ## 🔧 Development Workflow
@@ -167,8 +171,8 @@ git rm api
 git checkout -b platform/user-authentication
 
 # 2. Create feature branches in relevant submodules
-cd api && git checkout -b feature/auth-endpoints
-cd ../web-app && git checkout -b feature/auth-ui
+cd nuforce-api && git checkout -b feature/auth-endpoints
+cd ../nuforce-web-app && git checkout -b feature/auth-ui
 cd ..
 
 # 3. Develop in each submodule independently
@@ -204,7 +208,7 @@ git push origin main
 When you run `git submodule update`, submodules are in "detached HEAD" state. To make changes:
 
 ```bash
-cd api
+cd nuforce-api
 git checkout main  # or your working branch
 # ... make changes ...
 ```
@@ -240,7 +244,7 @@ git submodule update --remote
 git submodule status
 
 # Update URL if needed
-git submodule set-url api https://github.com/nuforce/nuforce-api.git
+git submodule set-url nuforce-api https://github.com/nuforce/nuforce-api.git
 ```
 
 ### Merge Conflicts in .gitmodules
@@ -257,4 +261,4 @@ git submodule update --init
 
 - [Git Submodules Documentation](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 - [Platform README](README.md) - Platform overview and setup
-- [Individual Repository READMEs](api/README.md) - Component-specific documentation
+- [Individual Repository READMEs](nuforce-api/README.md) - Component-specific documentation

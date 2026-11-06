@@ -42,10 +42,12 @@ git submodule status
 
 The script reads tracked branches from `.gitmodules`:
 
-- `api` -> `main`
-- `mobile-app` -> `main`
-- `web-app` -> `release`
-- `website` -> `main`
+- `nuforce-api` -> `main`
+- `nuforce-flutter` -> `main`
+- `nuforce-web-app` -> `release`
+- `nuforce-nuxt` -> `main`
+- `nuforce-admin` -> `main`
+- `nuforce-ai-engine` -> `main`
 
 ### 4. Troubleshooting
 
