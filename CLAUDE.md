@@ -32,4 +32,6 @@ Older docs, RFCs and memory notes use the old names. Read `api/...` as `nuforce-
 - Composer and AWS CLI v2 in `.tools/bin` (gitignored, local to this checkout).
 - `AWS_PROFILE=nuforce`.
 
+Node follows each repo's CI: 20 for `nuforce-api` (Vite), `nuforce-admin` and `nuforce-nuxt`; 22 for `nuforce-ai-engine`; current LTS for `nuforce-web-app`. Locally each of those repos has an untracked `.envrc` (in its `.git/info/exclude`) that runs `source_up` and adds `.tools/node/<major>/bin`.
+
 Claude Code's Bash tool does not run the direnv hook. Load the environment first in each command: `eval "$(direnv export bash)"`.
