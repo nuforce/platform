@@ -6,6 +6,8 @@
 **Status:** Implemented — devcontainer files created, Ona projects deployed
 **Author:** NuForce Platform Team
 
+> **Folder names changed (November 2026).** The submodules now sit at `nuforce-api`, `nuforce-web-app`, `nuforce-flutter`, `nuforce-nuxt` and `nuforce-admin`. Read `api/`, `web-app/`, `mobile-app/`, `website/` and `admin-app/` below as those folders. Paths inside a container, such as `/workspaces/api`, are set in each repo's own devcontainer and did not change.
+
 ---
 
 ## Table of Contents

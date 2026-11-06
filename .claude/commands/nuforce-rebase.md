@@ -40,5 +40,5 @@ git submodule status
 ## Notes
 
 - The script reads branch mappings from `.gitmodules`
-- The current mappings are `api -> main`, `mobile-app -> main`, `web-app -> release`, and `website -> main`
+- The current mappings are `nuforce-api -> main`, `nuforce-flutter -> main`, `nuforce-web-app -> release`, `nuforce-nuxt -> main`, `nuforce-admin -> main`, and `nuforce-ai-engine -> main`
 - This command must be run from the platform repository root

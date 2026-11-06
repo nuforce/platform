@@ -33,10 +33,12 @@ graph TB
 
 | Component | Technology | Purpose | Port |
 |-----------|------------|---------|------|
-| [`api/`](api/) | Laravel 10 + PHP 8.3 | Core business logic, API endpoints, authentication | 8001 |
-| [`web-app/`](web-app/) | Next.js 14 + React 18 | Customer dashboard, admin panel, web interface | 4200 |
-| [`mobile-app/`](mobile-app/) | Flutter 3.27.1 | Field worker mobile app (iOS/Android) | - |
-| [`website/`](website/) | Nuxt 3 + Vue 3 | Marketing website, landing pages | 3000 |
+| [`nuforce-api/`](nuforce-api/) | Laravel 10 + PHP 8.3 | Core business logic, API endpoints, authentication | 8001 |
+| [`nuforce-web-app/`](nuforce-web-app/) | Next.js 14 + React 18 | Customer dashboard, admin panel, web interface | 4200 |
+| [`nuforce-flutter/`](nuforce-flutter/) | Flutter 3.27.1 | Field worker mobile app (iOS/Android) | - |
+| [`nuforce-nuxt/`](nuforce-nuxt/) | Nuxt 3 + Vue 3 | Marketing website, landing pages | 3000 |
+| [`nuforce-admin/`](nuforce-admin/) | Vite + React | Internal admin app | - |
+| [`nuforce-ai-engine/`](nuforce-ai-engine/) | Node + TypeScript | AI engine and agent tools | - |
 
 ## ✨ Platform Features
 
@@ -75,8 +77,8 @@ graph TB
 
 ```bash
 # Clone the platform
-git clone [platform-repo]
-cd platform
+git clone --recurse-submodules https://github.com/nuforce/platform.git nuforce-workspace
+cd nuforce-workspace
 
 # Start all services with Docker
 docker-compose up -d
@@ -84,29 +86,29 @@ docker-compose up -d
 # Or start individually:
 
 # 1. Start API Backend (Port 8001)
-cd api && docker-compose up -d
+cd nuforce-api && docker-compose up -d
 # Visit: http://localhost:8001
 
 # 2. Start Web Application (Port 4200) 
-cd web-app && npm install && npm run dev
+cd nuforce-web-app && npm install && npm run dev
 # Visit: http://localhost:4200
 
 # 3. Start Marketing Website (Port 3000)
-cd website && npm install && npm run dev
+cd nuforce-nuxt && npm install && npm run dev
 # Visit: http://localhost:3000
 
 # 4. Setup Mobile Development
-cd mobile-app && flutter pub get && flutter run
+cd nuforce-flutter && flutter pub get && flutter run
 ```
 
 ### 🔧 Development Setup
 
 Each repository contains detailed setup instructions:
 
-- **API Setup**: [api/README.md](api/README.md) - Laravel backend with Docker
-- **Web App Setup**: [web-app/README.md](web-app/README.md) - Next.js application  
-- **Mobile Setup**: [mobile-app/README.md](mobile-app/README.md) - Flutter development
-- **Website Setup**: [website/README.md](website/README.md) - Nuxt marketing site
+- **API Setup**: [nuforce-api/README.md](nuforce-api/README.md) - Laravel backend with Docker
+- **Web App Setup**: [nuforce-web-app/README.md](nuforce-web-app/README.md) - Next.js application  
+- **Mobile Setup**: [nuforce-flutter/README.md](nuforce-flutter/README.md) - Flutter development
+- **Website Setup**: [nuforce-nuxt/README.md](nuforce-nuxt/README.md) - Nuxt marketing site
 
 ## 🛠️ Technology Stack
 
@@ -158,15 +160,15 @@ Each repository contains detailed setup instructions:
 
 ```bash
 # Deploy infrastructure (API)
-cd api/infrastructure/scripts
+cd nuforce-api/infrastructure/scripts
 ./03-deploy-infrastructure.sh
 
 # Deploy web application
-cd web-app
+cd nuforce-web-app
 npm run build:prod
 
 # Deploy mobile app
-cd mobile-app
+cd nuforce-flutter
 shorebird release android
 shorebird release ios
 ```
@@ -208,14 +210,14 @@ git push origin feature/new-feature
 ### Testing Strategy
 ```bash
 # Backend testing
-cd api && ./vendor/bin/phpunit
+cd nuforce-api && ./vendor/bin/phpunit
 
 # Frontend testing  
-cd web-app && npm run test
-cd website && npm run test
+cd nuforce-web-app && npm run test
+cd nuforce-nuxt && npm run test
 
 # Mobile testing
-cd mobile-app && flutter test
+cd nuforce-flutter && flutter test
 ```
 
 ### Monitoring & Debugging
@@ -241,15 +243,15 @@ cd mobile-app && flutter test
 
 ### API Documentation
 - **OpenAPI/Swagger**: Available at `/api/documentation`
-- **Postman Collection**: [Download here](api/docs/postman/)
+- **Postman Collection**: [Download here](nuforce-api/docs/postman/)
 
 ### Development Guides
-- **[API Documentation](api/README.md)** - Backend development
-- **[Web App Guide](web-app/README.md)** - Frontend development  
-- **[Mobile Development](mobile-app/README.md)** - Flutter setup
-- **[Website Development](website/README.md)** - Marketing site
-- **[Infrastructure Guide](api/infrastructure/README.md)** - AWS setup
-- **[Deployment Guide](api/docs/DEPLOYMENT.md)** - Deployment procedures
+- **[API Documentation](nuforce-api/README.md)** - Backend development
+- **[Web App Guide](nuforce-web-app/README.md)** - Frontend development  
+- **[Mobile Development](nuforce-flutter/README.md)** - Flutter setup
+- **[Website Development](nuforce-nuxt/README.md)** - Marketing site
+- **[Infrastructure Guide](nuforce-api/infrastructure/README.md)** - AWS setup
+- **[Deployment Guide](nuforce-api/docs/DEPLOYMENT.md)** - Deployment procedures
 
 ## 🤝 Contributing
 
